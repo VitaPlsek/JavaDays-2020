@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:h2:~/tmp/h2/gooddata-example
+    driverClassName: org.h2.Driver
+    username: sa
+
+gooddata:
+  forbidden-words-file: ~/forbidden-words-file.txt

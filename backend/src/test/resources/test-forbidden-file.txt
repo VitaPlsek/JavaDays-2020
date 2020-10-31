@@ -1,0 +1,2 @@
+forbidden-word
+second-forbidden-word

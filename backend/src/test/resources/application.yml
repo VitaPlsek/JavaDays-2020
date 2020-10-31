@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+
+gooddata:
+  forbidden-words-file: classpath:test-forbidden-file.txt
