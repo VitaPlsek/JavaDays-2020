@@ -5,7 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SumPipe implements PipeTransform {
 
-  transform(numbers: number[]) {
-    return numbers.reduce((acc, val) => acc + val, 0);
+  transform(numbers: (number | null)[]): number {
+    return numbers
+      .filter(value => value !== null)
+      .map(value => value as number)
+      .reduce((acc, val) => acc + val, 0);
   }
 }

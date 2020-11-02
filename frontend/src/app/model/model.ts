@@ -20,16 +20,16 @@ export enum Hole {
 }
 
 export interface Court {
-  name: string
-  holes: Hole[]
+  name: string;
+  holes: Hole[];
 }
 
 export interface Player {
-  name: string,
-  points: (number | null)[]
+  name: string;
+  points: (number | null)[];
 }
 
 export interface Game {
-  court: Court
-  players: Player[]
+  court: Court;
+  players: Player[];
 }
