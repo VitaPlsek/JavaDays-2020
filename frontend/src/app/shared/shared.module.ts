@@ -7,10 +7,8 @@ import { SumPipe } from './sum.pipe';
   declarations: [HoleNamePipe, SumPipe],
   exports: [
     HoleNamePipe,
-    SumPipe
-  ],
-  imports: [
+    SumPipe,
     CommonModule
-  ]
+  ],
 })
 export class SharedModule { }

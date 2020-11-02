@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Game } from '../model/model';
+import { ScoredGame } from 'frontend-api';
+
 
 @Component({
   selector: 'vp-ticket',
@@ -8,7 +9,7 @@ import { Game } from '../model/model';
 })
 export class TicketComponent implements OnInit {
 
-  @Input() game: Game = {} as Game;
+  @Input() game: ScoredGame;
 
   constructor() {
   }

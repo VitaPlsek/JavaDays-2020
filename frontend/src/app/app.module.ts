@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiModule, BASE_PATH } from 'frontend-api';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
     TicketComponent
   ],
   imports: [
+    ApiModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ {provide: BASE_PATH, useValue: 'http://localhost:8080'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

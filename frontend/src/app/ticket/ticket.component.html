@@ -10,13 +10,13 @@
   <tbody>
   <tr *ngFor="let hole of game.court.holes; let index = index">
     <th><span class="hole-number">{{index}}.</span> <span class="hole-name">{{hole | holeName}}</span></th>
-    <td *ngFor="let player of game.players">{{player.points[index]}}</td>
+    <td *ngFor="let player of game.players">{{player.score[index]}}</td>
   </tr>
   </tbody>
   <tfoot>
   <tr>
     <th>Celkem</th>
-    <th *ngFor="let player of game.players">{{player.points | sum}}</th>
+    <th *ngFor="let player of game.players">{{player.score | sum}}</th>
   </tr>
   </tfoot>
 </table>

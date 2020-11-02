@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Game } from './model/model';
+import { MinigolfControllerService } from 'frontend-api';
+;
 
 @Component({
   selector: 'vp-root',
@@ -9,9 +9,9 @@ import { Game } from './model/model';
 })
 export class AppComponent {
 
-  game$ = this.http.get<Game>('http://localhost:8080/game/0');
+  game$ = this.minigolf.getGameUsingGET(0);
 
-  constructor(private http: HttpClient) {
+  constructor(private minigolf: MinigolfControllerService) {
 
   }
 }

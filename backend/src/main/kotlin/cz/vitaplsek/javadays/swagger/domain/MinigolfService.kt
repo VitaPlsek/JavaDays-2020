@@ -1,17 +1,16 @@
 package cz.vitaplsek.javadays.swagger.domain
 
 import Court
-import Game
-import Player
+import ScoredGame
+import ScoredPlayer
 import cz.vitaplsek.javadays.swagger.api.model.Hole
 import org.springframework.stereotype.Component
 
 @Component
 class MinigolfService() {
 
-
     val games = listOf(
-            Game(
+            ScoredGame(
                     Court("Brno Kr.pole - Hala",
                             listOf(
                                     Hole.Prima,
@@ -32,11 +31,11 @@ class MinigolfService() {
                                     Hole.Ledvina,
                                     Hole.Salzburg)),
                     listOf(
-                            Player("VP", listOf(1, 1, 2, 2, 3, 2, 4, 1, 1, 2, 3, 2, 1, 1, 2, 2, 2, 1)),
-                            Player("TJ", listOf(2, 1, 2, 3, 1, 2, 3, 3, 2, 1, 2, 2, 1, 1, 3, 1, 2, 3))
+                            ScoredPlayer("VP", listOf(1, 1, 2, 2, 3, 2, 4, 1, 1, 2, 3, 2, 1, 1, 2, 2, 2, 1)),
+                            ScoredPlayer("TJ", listOf(2, 1, 2, 3, 1, 2, 3, 3, 2, 1, 2, 2, 1, 1, 3, 1, 2, 3))
                     )
             ))
 
-    fun getGame(id: Int) = games.get(id)
+    fun getGame(id: Int) = games[id]
 
 }

@@ -13,7 +13,7 @@ class SpringFoxConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("cz.vitaplsek"))
                 .paths(PathSelectors.any())
                 .build()
     }
