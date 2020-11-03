@@ -1,31 +1,31 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CourtHoles } from 'frontend-api';
+import { Hole } from 'frontend-api';
 
-const translation = new Map<CourtHoles, string>()
-  .set(CourtHoles.Prima, 'Přímá')
-  .set(CourtHoles.Pyramidy, 'Pyramidy')
-  .set(CourtHoles.Plosina, 'Plošina')
-  .set(CourtHoles.Uhel, 'Úhel')
-  .set(CourtHoles.Looping, 'Looping')
-  .set(CourtHoles.Pricky, 'Příčky')
-  .set(CourtHoles.Plozene, 'Pložené')
-  .set(CourtHoles.Kosoctverec, 'Kosočtverec')
-  .set(CourtHoles.OknoNaKl, 'Okno nakloněné')
-  .set(CourtHoles.Labyrint, 'Labyrint')
-  .set(CourtHoles.Diablo, 'Diablo')
-  .set(CourtHoles.Trubka, 'Trubka')
-  .set(CourtHoles.V, 'V')
-  .set(CourtHoles.Okno, 'Okno')
-  .set(CourtHoles.Blesk, 'Blesk')
-  .set(CourtHoles.Ledvina, 'Ledvina')
-  .set(CourtHoles.Salzburg, 'Salzburské V');
+const translation = new Map<Hole, string>()
+  .set(Hole.Prima, 'Přímá')
+  .set(Hole.Pyramidy, 'Pyramidy')
+  .set(Hole.Plosina, 'Plošina')
+  .set(Hole.Uhel, 'Úhel')
+  .set(Hole.Looping, 'Looping')
+  .set(Hole.Pricky, 'Příčky')
+  .set(Hole.Plozene, 'Pložené')
+  .set(Hole.Kosoctverec, 'Kosočtverec')
+  .set(Hole.OknoNaKl, 'Okno nakloněné')
+  .set(Hole.Labyrint, 'Labyrint')
+  .set(Hole.Diablo, 'Diablo')
+  .set(Hole.Trubka, 'Trubka')
+  .set(Hole.V, 'V')
+  .set(Hole.Okno, 'Okno')
+  .set(Hole.Blesk, 'Blesk')
+  .set(Hole.Ledvina, 'Ledvina')
+  .set(Hole.Salzburg, 'Salzburské V');
 
 @Pipe({
   name: 'holeName'
 })
 export class HoleNamePipe implements PipeTransform {
 
-  transform(hole: CourtHoles): string | undefined {
+  transform(hole: Hole): string | undefined {
     return translation.get(hole);
   }
 

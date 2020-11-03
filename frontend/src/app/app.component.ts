@@ -9,7 +9,7 @@ import { MinigolfControllerService } from 'frontend-api';
 })
 export class AppComponent {
 
-  game$ = this.minigolf.getGameUsingGET(0);
+  game$ = this.minigolf.getGame(0);
 
   constructor(private minigolf: MinigolfControllerService) {
 
